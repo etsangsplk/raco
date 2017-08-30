@@ -61,7 +61,7 @@ EXPRESSIONS_CASE = {
                                NamedAttributeRef('begin'),
                                NamedAttributeRef('end')
                                ])),
-    'byterange':Function(['bytes', 'begin', 'end'],
+    'byterange': Function(['bytes', 'begin', 'end'],
                          BYTERANGE([NamedAttributeRef('bytes'),
                                     NamedAttributeRef('begin'),
                                     NamedAttributeRef('end')
