@@ -56,6 +56,10 @@ EXPRESSIONS_CASE = {
     'lexmin': lambda num_args:
         create_variable_length_function(num_args, LEXMIN),
     'lesser': create_nested_binary(2, LESSER),
+    'concat': Function(['left', 'right'],
+                       CONCAT([NamedAttributeRef('left'),
+                               NamedAttributeRef('right')
+                               ])),
     'substr': Function(['str', 'begin', 'end'],
                        SUBSTR([NamedAttributeRef('str'),
                                NamedAttributeRef('begin'),

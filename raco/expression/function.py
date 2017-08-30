@@ -286,6 +286,12 @@ class GREATER(CompareFunction):
         return max(self.left.evaluate(_tuple, scheme, state),
                    self.right.evaluate(_tuple, scheme, state))
 
+class CONCAT(BinaryFunction):
+    literals = ['CONCAT']
+
+    def evaluate(self, _tuple, scheme, state=None):
+        return (self.left.evaluate(_tuple, scheme, state) +
+                self.right.evaluate(_tuple, scheme, state))
 
 class SUBSTR(NaryFunction):
     literals = ["SUBSTR"]
