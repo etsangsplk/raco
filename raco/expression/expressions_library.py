@@ -56,10 +56,6 @@ EXPRESSIONS_CASE = {
     'lexmin': lambda num_args:
         create_variable_length_function(num_args, LEXMIN),
     'lesser': create_nested_binary(2, LESSER),
-    'concat': Function(['left', 'right'],
-                       CONCAT([NamedAttributeRef('left'),
-                               NamedAttributeRef('right')
-                               ])),
     'substr': Function(['str', 'begin', 'end'],
                        SUBSTR([NamedAttributeRef('str'),
                                NamedAttributeRef('begin'),
@@ -109,7 +105,7 @@ def one_to_one_function(func_name):
 ONE_TO_ONE_FUNCS = ['ABS', 'CEIL', 'COS', 'FLOOR', 'LOG', 'SIN', 'SQRT',
                     'TAN', 'LEN', 'POW', 'MAX', 'MIN', 'SUM', 'AVG', 'STDEV',
                     'COUNTALL', 'MD5', 'RANDOM', 'YEAR', 'MONTH', 'DAY',
-                    'SPLIT', 'SEQUENCE', 'NGRAM', 'BITSET']
+                    'SPLIT', 'SEQUENCE', 'NGRAM', 'BITSET', 'CONCAT']
 
 ONE_TO_ONE_EXPRS = {k.lower(): one_to_one_function(k) for k in ONE_TO_ONE_FUNCS}  # noqa
 
