@@ -62,10 +62,10 @@ EXPRESSIONS_CASE = {
                                NamedAttributeRef('end')
                                ])),
     'byterange': Function(['bytes', 'begin', 'end'],
-                         BYTERANGE([NamedAttributeRef('bytes'),
-                                    NamedAttributeRef('begin'),
-                                    NamedAttributeRef('end')
-                                    ])),
+                          BYTERANGE([NamedAttributeRef('bytes'),
+                                     NamedAttributeRef('begin'),
+                                     NamedAttributeRef('end')
+                                     ])),
     'head': Function(['str', 'length'],
                      SUBSTR([NamedAttributeRef('str'),
                              NumericLiteral(0),
